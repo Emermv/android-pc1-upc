@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Book Shop</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="congratulations">Congratulations</string>
+    <string name="success_body">Transaction is successful</string>
+    <string name="done">Done</string>
+</resources>

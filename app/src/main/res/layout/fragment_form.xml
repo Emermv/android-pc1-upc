@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.pc1.fragments.Form">
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:orientation="vertical"
+          android:padding="10pt"
+          android:layout_height="wrap_content">
+
+
+          <android.support.design.widget.TextInputLayout
+              android:layout_width="match_parent"
+              android:layout_marginTop="4pt"
+              android:layout_height="wrap_content"
+              >
+              <EditText
+                  android:id="@+id/name"
+                  android:layout_width="match_parent"
+                  android:inputType="text"
+                  android:hint="Nombre"
+                  android:layout_height="wrap_content" />
+          </android.support.design.widget.TextInputLayout>
+          <android.support.design.widget.TextInputLayout
+              android:layout_width="match_parent"
+              android:layout_marginTop="4pt"
+              android:layout_height="wrap_content"
+              >
+              <EditText
+                  android:id="@+id/autor"
+                  android:layout_width="match_parent"
+                  android:inputType="text"
+                  android:hint="Autor"
+                  android:layout_height="wrap_content" />
+          </android.support.design.widget.TextInputLayout>
+          <RelativeLayout
+              android:layout_width="match_parent"
+              android:orientation="horizontal"
+              android:layout_height="wrap_content">
+              <android.support.design.widget.TextInputLayout
+                  android:layout_width="70pt"
+                  android:id="@+id/layout_price"
+                  android:layout_marginTop="4pt"
+
+                  android:layout_marginRight="5pt"
+                  android:layout_height="wrap_content"
+                  android:layout_alignParentStart="true"
+                  >
+                  <EditText
+                      android:id="@+id/price"
+                      android:layout_width="match_parent"
+                      android:inputType="numberDecimal"
+                      android:hint="Precio"
+                      android:layout_height="wrap_content" />
+              </android.support.design.widget.TextInputLayout>
+              <android.support.design.widget.TextInputLayout
+                  android:id="@+id/layout_stock"
+                  android:layout_toRightOf="@+id/layout_price"
+                  android:layout_width="wrap_content"
+                  android:layout_marginTop="4pt"
+                  android:layout_marginLeft="5pt"
+                  android:layout_alignParentEnd="true"
+                  android:layout_height="wrap_content"
+                  >
+                  <EditText
+                      android:id="@+id/stock"
+
+                      android:layout_width="match_parent"
+                      android:inputType="numberDecimal"
+                      android:hint="Stock"
+                      android:layout_height="wrap_content" />
+              </android.support.design.widget.TextInputLayout>
+          </RelativeLayout>
+          <!--TextView
+              android:layout_width="match_parent"
+              android:layout_marginTop="12pt"
+              android:layout_marginLeft="2pt"
+              android:text="Categoria"
+              android:layout_height="wrap_content" />
+          <Spinner
+              android:layout_marginTop="6pt"
+              android:id="@+id/category"
+              android:tooltipText="Categoría"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content" /-->
+
+          <RadioGroup
+              android:id="@+id/type"
+              android:layout_marginTop="12pt"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+              <RadioButton
+                  android:id="@+id/book"
+                  android:text="Libro"
+                  android:layout_width="70pt"
+                  android:checked="true"
+                  android:layout_height="wrap_content" />
+              <RadioButton
+                  android:id="@+id/journal"
+                  android:text="Revista"
+                  android:layout_gravity="end"
+
+                  android:layout_width="wrap_content"
+                  android:checked="false"
+                  android:layout_height="wrap_content" />
+          </RadioGroup>
+          <android.support.design.widget.TextInputLayout
+
+
+              android:layout_width="match_parent"
+              android:layout_marginTop="4pt"
+              android:layout_marginLeft="5pt"
+              android:layout_alignParentEnd="true"
+              android:layout_height="wrap_content"
+              >
+              <EditText
+                  android:id="@+id/description"
+                  android:hint="Resumen de la obra"
+                  android:inputType="text|textMultiLine"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content" />
+          </android.support.design.widget.TextInputLayout>
+
+          <Button
+              android:layout_width="match_parent"
+              android:text="GUARDAR"
+              android:layout_marginTop="16pt"
+              android:textColor="@android:color/white"
+              android:background="@color/colorAccent"
+              android:id="@+id/save"
+
+              android:layout_height="wrap_content" />
+          <Button
+              android:layout_width="match_parent"
+              android:text="CANCELAR"
+              android:layout_marginTop="16pt"
+              android:textColor="@android:color/white"
+              android:background="@color/colorPrimary"
+              android:id="@+id/back"
+
+              android:layout_height="wrap_content" />
+      </LinearLayout>
+  </ScrollView>
+</FrameLayout>
