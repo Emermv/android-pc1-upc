@@ -17,6 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 
 import android.widget.RadioButton;
@@ -49,7 +51,7 @@ public class Form extends Fragment {
     private OnFragmentInteractionListener mListener;
    EditText name,autor,price,stock,description;
    RadioGroup type;
-
+  CheckBox has_igv;
     public Form() {
         // Required empty public constructor
     }
@@ -106,6 +108,7 @@ public class Form extends Fragment {
 
         description=view.findViewById(R.id.description);
         type=view.findViewById(R.id.type);
+        has_igv=view.findViewById(R.id.has_igv);
         final Button save=view.findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,6 +123,13 @@ public class Form extends Fragment {
                 back();
             }
         });
+        has_igv.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                price.setText(String.valueOf(calcPrice(isChecked)));
+            }
+        });
         if(id>0){
             onEdit();
             getActivity().setTitle("Book Shop / Edit");
@@ -128,6 +138,16 @@ public class Form extends Fragment {
         }
 
         return view;
+    }
+    private float calcPrice(boolean isChecked){
+        float p=0;
+        float mp=Float.parseFloat(price.getText().toString());
+        if(isChecked){
+            p= (float) (mp/1.18);
+        }else{
+            p=(float)(mp*1.18);
+        }
+        return p;
     }
 private void back(){
     FragmentManager fragmentManager =getActivity().getSupportFragmentManager();
@@ -144,7 +164,7 @@ private void back(){
         description.setText(book.getDescription());
         price.setText(String.valueOf(book.getPrice()));
         stock.setText(String.valueOf(book.getStock()));
-  Log.i("LIZ",book.getType()+"");
+       has_igv.setChecked(book.getHas_igv()==1);
         if(book.getType()==1){
            type.check(R.id.journal);
         }
@@ -215,8 +235,9 @@ private void back(){
         ContentValues values=new ContentValues();
         values.put("name",name.getText().toString());
         values.put("autor",autor.getText().toString());
-        values.put("price",price.getText().toString());
+        values.put("price",calcPrice(has_igv.isChecked()));
         values.put("stock",stock.getText().toString());
+        values.put("has_igv",has_igv.isChecked()?1:0);
         values.put("description",description.getText().toString());
 
         if(type.getCheckedRadioButtonId()==R.id.book){

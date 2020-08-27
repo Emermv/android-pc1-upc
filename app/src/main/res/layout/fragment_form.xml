@@ -89,7 +89,13 @@
               android:tooltipText="Categoría"
               android:layout_width="fill_parent"
               android:layout_height="wrap_content" /-->
-
+          <CheckBox
+              android:id="@+id/has_igv"
+              android:layout_marginTop="8pt"
+              android:layout_width="match_parent"
+              android:text="Precio incluido IGV(18%)"
+              android:checked="true"
+              android:layout_height="wrap_content" />
           <RadioGroup
               android:id="@+id/type"
               android:layout_marginTop="12pt"
@@ -111,6 +117,7 @@
                   android:checked="false"
                   android:layout_height="wrap_content" />
           </RadioGroup>
+
           <android.support.design.widget.TextInputLayout
 
 

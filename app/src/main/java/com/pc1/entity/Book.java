@@ -3,7 +3,15 @@ package com.pc1.entity;
 public class Book {
     private String name,autor,description;
     private float price;
-    private  int stock,type,id;
+    private  int stock,type,id,has_igv;
+
+    public int getHas_igv() {
+        return has_igv;
+    }
+
+    public void setHas_igv(int has_igv) {
+        this.has_igv = has_igv;
+    }
 
     public int getId() {
         return id;

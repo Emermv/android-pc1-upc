@@ -56,7 +56,7 @@ return books;
     public com.pc1.entity.Book get(int id){
         SQLiteDatabase db=getRead();
         Cursor cursor=db.query("book",
-                new String[]{"id,name,autor,price,stock,type,description"},
+                new String[]{"id,name,autor,price,stock,type,description","has_igv"},
                 "id=?",new String[]{
                 ""+id
         },null,null,null);
@@ -69,6 +69,7 @@ return books;
             b.setDescription(cursor.getString(6));
             b.setStock(cursor.getInt(4));
             b.setType(cursor.getInt(5));
+            b.setHas_igv(cursor.getInt(7));
         }
         return b;
     }

@@ -16,7 +16,7 @@ public class Db extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE book(" +
                 "id integer not null primary key AUTOINCREMENT," +
                 "name varchar(250),autor varchar(100),price decimal(11,2)," +
-                "stock integer,type integer,description text,created_at datetime default current_timestamp)");
+                "stock integer,has_igv integer default 0,type integer,description text,created_at datetime default current_timestamp)");
     }
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // This database is only a cache for online data, so its upgrade policy is
